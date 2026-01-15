@@ -1,5 +1,6 @@
 const tbody = document.querySelector("tbody");
 const form = document.querySelector("form");
+let nomer = 1;
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -15,6 +16,8 @@ form.addEventListener("submit", (event) => {
 
   const tr = document.createElement("tr");
 
+  const tdNomor = document.createElement("td");
+  tdNomor.textContent = nomer;
   const tdCelcius = document.createElement("td");
   tdCelcius.textContent = c;
   const tdFahrenheit = document.createElement("td");
@@ -24,8 +27,9 @@ form.addEventListener("submit", (event) => {
   const tdKelvin = document.createElement("td");
   tdKelvin.textContent = k;
 
-  tr.append(tdCelcius, tdFahrenheit, tdReamur, tdKelvin);
+  tr.append(tdNomor, tdCelcius, tdFahrenheit, tdReamur, tdKelvin);
   tbody.append(tr);
 
+  nomer++;
   form.reset();
 });
