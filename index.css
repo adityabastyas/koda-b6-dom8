@@ -6,11 +6,84 @@
   box-sizing: border-box;
 }
 
+body {
+  background: gray;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 32px;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 form {
   display: flex;
   flex-direction: column;
+  background: #3b3939;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: 1px solid black;
+}
+
+form label {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  background: #2c2b2b;
+  color: white;
+}
+
+form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #1a1a1a;
+  color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .table {
-  border: 1px solid goldenrod;
+  width: 100%;
+  background: #3f3e3e;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.table thead {
+  background: #1a1a1a;
+  color: white;
+}
+
+.table th {
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid black;
+  color: white;
 }
