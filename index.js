@@ -24,16 +24,19 @@ for (let i = 0; i < histories.length; i++) {
   const tdNomor = document.createElement("td");
   tdNomor.textContent = nomer;
   const tdCelcius = document.createElement("td");
-  tdCelcius.textContent = item.c;
+  tdCelcius.textContent = item.celcius;
   const tdFahrenheit = document.createElement("td");
-  tdFahrenheit.textContent = item.f;
+  tdFahrenheit.textContent = item.fahrenheit;
   const tdReamur = document.createElement("td");
-  tdReamur.textContent = item.r;
+  tdReamur.textContent = item.reamur;
   const tdKelvin = document.createElement("td");
-  tdKelvin.textContent = item.k;
-}
+  tdKelvin.textContent = item.kelvin;
 
-// window.localStorage.setItem("history", JSON.stringify(histories));
+  tr.append(tdNomor, tdCelcius, tdFahrenheit, tdReamur, tdKelvin);
+  tbody.append(tr);
+
+  nomer++;
+}
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -41,24 +44,28 @@ form.addEventListener("submit", (event) => {
   const data = new FormData(form);
   const obj = Object.fromEntries(data.entries());
 
-  let c = parseInt(obj.number);
+  let celcius = parseInt(obj.number);
 
-  let f = (c * 9) / 5 + 32;
-  let r = (c * 4) / 5;
-  let k = c + 273.15;
+  let fahrenheit = celToFar(celcius);
+  let reamur = celToRea(celcius);
+  let kelvin = celToKel(celcius);
+
+  histories.push({ celcius, fahrenheit, reamur, kelvin });
+
+  window.localStorage.setItem("history", JSON.stringify(histories));
 
   const tr = document.createElement("tr");
 
   const tdNomor = document.createElement("td");
   tdNomor.textContent = nomer;
   const tdCelcius = document.createElement("td");
-  tdCelcius.textContent = c;
+  tdCelcius.textContent = celcius;
   const tdFahrenheit = document.createElement("td");
-  tdFahrenheit.textContent = f;
+  tdFahrenheit.textContent = fahrenheit;
   const tdReamur = document.createElement("td");
-  tdReamur.textContent = r;
+  tdReamur.textContent = reamur;
   const tdKelvin = document.createElement("td");
-  tdKelvin.textContent = k;
+  tdKelvin.textContent = kelvin;
 
   tr.append(tdNomor, tdCelcius, tdFahrenheit, tdReamur, tdKelvin);
   tbody.append(tr);
