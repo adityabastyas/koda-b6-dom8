@@ -1,6 +1,6 @@
 # Progam Konversi Suhu
 
-App ini menjalankan progam konversi suhu dari ceclcius ke fahrenheit, celcius ke reamur dan celcius ke kelvin
+App ini menjalankan progam konversi suhu dari ceclcius ke fahrenheit, celcius ke reamur dan celcius ke kelvin , dan tela update menggunakan jQuery
 
 ![](image.png)
 
